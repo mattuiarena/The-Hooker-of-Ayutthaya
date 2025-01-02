@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hooker of Ayutthaya</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&family=Neucha&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #100f0a;
+            color: #efa937;
+            font-family: 'Lexend', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 100%;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0 0 15px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'Neucha', cursive;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            font-weight: normal;
+            margin: 0;
+            opacity: 0.9;
+            line-height: 1.4;
+            font-family: 'Neucha', cursive;
+        }
+
+        .intro-text {
+            text-align: left;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            line-height: 1.8;
+        }
+
+        .intro-text p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .intro-text h2 {
+            font-size: 2.2rem;
+            margin: 0 0 30px 0;
+            color: #efa937;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 35px 0;
+        }
+
+        .benefits-list li {
+            margin-bottom: 20px;
+            padding-left: 35px;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .benefits-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #efa937;
+            font-size: 1.4rem;
+            font-weight: bold;
+            background: rgba(239, 169, 55, 0.15);
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: -2px;
+        }
+
+        .benefits-list li b {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 600px;
+            }
+            .intro-text {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            .subtitle {
+                font-size: 1.3rem;
+            }
+            .main-question {
+                font-size: 1.3rem;
+            }
+            .question-heading {
+                font-size: 1.8rem;
+            }
+        }
+
+        .quote-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin: 50px auto;
+            padding: 40px;
+            line-height: 1.6;
+            position: relative;
+            background-color: rgba(239, 169, 55, 0.1);
+            border-radius: 10px;
+            max-width: 800px;
+        }
+
+        .quote-text::before {
+            content: '"';
+            position: absolute;
+            top: -30px;
+            left: 20px;
+            font-size: 6rem;
+            font-family: 'Neucha', cursive;
+            color: rgba(239, 169, 55, 0.3);
+            line-height: 1;
+        }
+
+        .quote-text::after {
+            content: '"';
+            position: absolute;
+            bottom: -60px;
+            right: 20px;
+            font-size: 6rem;
+            font-family: 'Neucha', cursive;
+            color: rgba(239, 169, 55, 0.3);
+            line-height: 1;
+        }
+
+        .question-section {
+            margin-top: 50px;
+            border-top: 1px solid rgba(239, 169, 55, 0.3);
+            padding-top: 30px;
+        }
+
+        .question-heading {
+            font-size: 2rem;
+            margin: 40px 0 25px 0;
+            font-weight: 500;
+            line-height: 1.3;
+        }
+
+        .question-number {
+            display: block;
+            font-family: 'Neucha', cursive;
+            color: #efa937;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+
+        .reflection-list {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
+        }
+
+        .reflection-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .reflection-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #efa937;
+        }
+
+        .intro-box {
+            background-color: #efa937;
+            color: #100f0a;
+            padding: 25px 30px;
+            border-radius: 10px;
+            margin: 40px auto;
+            max-width: 800px;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 480px) {
+            .question-heading {
+                font-size: 1.6rem;
+                gap: 15px;
+            }
+            
+            .step-number {
+                width: 60px;
+                height: 60px;
+                font-size: 1.4rem;
+            }
+        }
+
+        .dramatic-quote {
+            font-size: 1.4rem;
+            font-style: italic;
+            margin: 40px auto;
+            padding: 30px 40px;
+            line-height: 1.6;
+            position: relative;
+            color: #efa937;
+            font-family: 'Neucha', cursive;
+            text-align: center;
+            max-width: 700px;
+        }
+
+        .dramatic-quote::before,
+        .dramatic-quote::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border: 3px solid #efa937;
+            opacity: 0.5;
+        }
+
+        .dramatic-quote::before {
+            top: 0;
+            left: 0;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .dramatic-quote::after {
+            bottom: 0;
+            right: 0;
+            border-left: none;
+            border-top: none;
+        }
+
+        .philosophy-questions {
+            margin: 30px 0;
+        }
+
+        .main-question {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #efa937;
+            margin-bottom: 12px;
+            margin-top: 25px;
+            font-family: 'Neucha', cursive;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .main-question::before {
+            content: '✧';
+            color: #efa937;
+            font-size: 1.5rem;
+        }
+
+        .question-detail {
+            margin-left: 30px;
+            margin-bottom: 30px;
+            padding-left: 25px;
+            border-left: 2px solid rgba(239, 169, 55, 0.3);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: rgba(239, 169, 55, 0.9);
+        }
+
+        .contact-section {
+            background: rgba(239, 169, 55, 0.1);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 60px auto;
+            max-width: 800px;
+        }
+
+        .contact-section h2 {
+            font-family: 'Neucha', cursive;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .contact-section p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .price-highlight {
+            font-family: 'Neucha', cursive;
+            font-size: 1.3rem;
+            font-style: italic;
+            display: inline-block;
+            padding: 5px 0;
+            border-bottom: 2px solid rgba(239, 169, 55, 0.3);
+        }
+
+        .conclusion-text {
+            margin: 60px auto 40px;
+            padding: 40px;
+            position: relative;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .conclusion-text::before,
+        .conclusion-text::after {
+            content: '✧';
+            font-size: 2rem;
+            color: #efa937;
+            opacity: 0.6;
+            display: block;
+            margin: 20px 0;
+        }
+
+        .conclusion-text p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin: 30px 0;
+            font-style: italic;
+        }
+
+        .conclusion-motto {
+            font-family: 'Neucha', cursive;
+            font-size: 2rem;
+            text-align: center;
+            margin: 40px 0 20px;
+            color: #efa937;
+            position: relative;
+            display: inline-block;
+        }
+
+        .conclusion-motto::before,
+        .conclusion-motto::after {
+            content: '';
+            position: absolute;
+            height: 2px;
+            width: 60px;
+            background: linear-gradient(to right, transparent, #efa937, transparent);
+            top: 50%;
+        }
+
+        .conclusion-motto::before {
+            right: 100%;
+            margin-right: 20px;
+        }
+
+        .conclusion-motto::after {
+            left: 100%;
+            margin-left: 20px;
+        }
+
+        .conclusion-wrapper {
+            position: relative;
+            padding: 20px;
+            margin: 40px 0;
+        }
+
+        .conclusion-wrapper::before,
+        .conclusion-wrapper::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(239, 169, 55, 0.3);
+        }
+
+        .conclusion-wrapper::before {
+            top: 0;
+            left: 0;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .conclusion-wrapper::after {
+            bottom: 0;
+            right: 0;
+            border-left: none;
+            border-top: none;
+        }
+
+        .schedule-section {
+            text-align: center;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .schedule-button {
+            display: inline-block;
+            background-color: #efa937;
+            color: #100f0a;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: 'Neucha', cursive;
+            font-size: 1.4rem;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .schedule-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .calendar-widget {
+            width: 100%;
+            max-width: 700px;
+            height: 600px;
+            border: none;
+            margin: 30px auto;
+            border-radius: 10px;
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .language-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .language-btn {
+            padding: 8px 20px;
+            background: rgba(239, 169, 55, 0.1);
+            border: 1px solid #efa937;
+            color: #efa937;
+            font-family: 'Neucha', cursive;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .language-btn.active {
+            background: #efa937;
+            color: #100f0a;
+        }
+
+        .language-btn:hover {
+            background: #efa937;
+            color: #100f0a;
+        }
+    </style>
+</head>
+<body>
+    <div class="language-selector">
+        <a href="index.html" class="language-btn">ENGLISH</a>
+        <a href="thai.html" class="language-btn active">ไทย</a>
+    </div>
+    <div class="container">
+        <img src="hooker_ma.jpeg" alt="The Hooker of Ayutthaya">
+        <h1>โสเภณีแห่งกรุงศรีอยุธยา</h1>
+        <p class="subtitle">เล่นกับร่างกายของพวกเขา ปกครองจิตใจของพวกเขา กำหนดชะตากรรมของพวกเขา</p>
+    </div>
+    
+    <div class="intro-box">
+        คุณเป็นโสเภณีที่ขายร่างกายของคุณ ฉันจะแสดงให้คุณเห็นว่าจะควบคุมจิตใจของคุณได้อย่างไรและขายได้ดีขึ้น ลองเข้าร่วมโปรแกรมการเปลี่ยนแปลงนี้และกลายเป็นโสเภณีที่ดีที่สุดที่คุณจะเป็นได้ เป็นเจ้าของอำนาจของคุณ ควบคุมความคิดของพวกเขา และกำหนดชะตากรรมของพวกเขา</div>
+    
+    <div class="intro-text">
+        <p>บทความนี้เขียนขึ้นเพื่อผู้หญิงที่ขายร่างกายของตนเอง บางทีคุณอาจเริ่มต้นเส้นทางนี้ด้วยความจำเป็น บางทีอาจเป็นเพราะความอยากรู้อยากเห็น หรือการกบฏต่อโลกที่พยายามกักขังคุณไว้ ไม่ว่าอะไรก็ตามที่นำคุณมาที่นี่ มันก็เป็นของคุณ แต่ลองมองความเป็นจริงสิว่ามีช่วงเวลาหนึ่งใช่ไหม ช่วงเวลาที่ความคิดฟุ้งซ่านเข้ามาหา เมื่อคุณตั้งคำถามกับทางเลือกของคุณ รู้สึกติดขัด หรือสงสัยว่าคุณสูญเสียการสัมผัสกับสิ่งที่ทำให้คุณมีพลังในตอนแรกหรือไม่</p>
+        
+        <p>นั่นคือที่มาของ The Hooker of Bangkok โปรแกรมนี้ไม่ได้มาเพื่อตัดสินหรือแก้ไขคุณ แต่มาเพื่อเปลี่ยนแปลงคุณ เพื่อช่วยให้คุณตัดเสียงรบกวนและเชื่อมต่อกับผู้หญิงที่คุณเป็นอย่างแท้จริง: ยืดหยุ่น ฉลาด และไม่อาจหยุดยั้งได้</p>
+        
+        <p>หลายศตวรรษที่ผ่านมา มีผู้หญิงคนหนึ่งในเมืองเวนิสที่ประสบกับการเปลี่ยนแปลงนี้ เธอเป็นที่รู้จักในนามโสเภณีแห่งอยุธยา เธอไม่เพียงแต่ถูกแสวงหาเพราะรูปร่างของเธอเท่านั้น แต่ยังรวมถึงภูมิปัญญา บุคลิก และวิธีที่เธอเปลี่ยนทุกช่วงเวลาให้กลายเป็นรูปแบบศิลปะ เธอไม่ได้แค่เอาตัวรอดเท่านั้น แต่เธอยังเจริญรุ่งเรือง โดยเชี่ยวชาญในการรักษาสมดุลที่ละเอียดอ่อนระหว่างความเปราะบางและพลังอำนาจ ลูกค้าของเธอไม่ได้แค่จากไปอย่างพึงพอใจเท่านั้น แต่พวกเขาจากไปพร้อมกับความเปลี่ยนแปลง</p>
+        
+        <p>ลองจินตนาการดูสิ:</p>
+        
+        <ul class="benefits-list">
+            <li><b>คุณเป็นเจ้าของเรื่องราวของคุณเอง</b>ไม่ต้องอาย ไม่ต้องขอโทษ เพียงแค่มีความมั่นใจที่จะยืนหยัดในทางเลือกของคุณ</li>
+            <li><b>คุณเชี่ยวชาญในการมีอยู่ของคุณ</b>การเดินเข้าไปในห้องใดก็ตามด้วยพลังงานอันสงบมั่นคงที่สั่งให้เคารพ</li>
+            <li><b>คุณควบคุมการเล่นเรื่อง</b>การเข้าใจความปรารถนาและอารมณ์ของผู้อื่นอย่างลึกซึ้ง เพื่อให้การโต้ตอบทุกครั้งกลายเป็นโอกาสในการเพิ่มคุณค่าให้กับตัวเอง</li>
+            <li><b>คุณสร้างอนาคตของคุณ</b>เปลี่ยนเกมที่ไม่ยุติธรรมของโลกให้กลายเป็นกลยุทธ์ที่เหมาะกับคุณ</li>
+            <li><b>คุณอยู่ด้วยความสงบสุข</b>ไม่ต้องมีเสียงคิดฟุ้งซ่านอีกต่อไป ไม่ต้องเดาอีกต่อไป แต่มีเพียงความชัดเจน ความเข้มแข็ง และเสียงจากภายในตัวคุณที่คอยแนะนำคุณในทุกย่างก้าว</li>
+        </ul>
+        
+        <p>โปรแกรมนี้จะพาคุณไปที่นั่น ผ่านชุดคำถามนำทาง การไตร่ตรอง และการค้นพบ คุณจะเรียนรู้ที่จะขจัดความสงสัยและความสับสน คุณจะค้นพบภูมิปัญญาและพลังที่ถูกฝังอยู่ใต้เสียงรบกวนทั้งหมด เชื่อมต่อกับแก่นแท้ของตัวตนของคุณอีกครั้ง และก้าวเข้าสู่ตัวตนในแบบที่ไม่มีใครหยุดยั้งได้</p>
+        
+        <p>นี่ไม่ใช่เรื่องของการเปลี่ยนแปลงตัวเอง แต่เป็นเรื่องของการทำให้ตัวเองกลายเป็นคนที่เข้มแข็งที่สุด เพราะผู้หญิงที่เข้มแข็งอย่างแท้จริงในอาชีพนี้ไม่ได้ขายแค่ร่างกายของเธอเท่านั้น แต่เธอยังขายตัวตน จิตใจ และพลังของเธอด้วย เธอเป็นเจ้าของทุกช่วงเวลาและกำหนดอนาคตของเธอในแบบที่เธอต้องการ</p>
+        
+        <p>หากคุณพร้อมที่จะก้าวออกจากความโกลาหล ค้นพบความแข็งแกร่ง และเป็นเจ้าของชีวิตในแบบที่ไม่เคยมีมาก่อน ยินดีต้อนรับสู่ The Hooker of Bangkok การเปลี่ยนแปลงกำลังจะเริ่มต้นขึ้นแล้ว</p>
+        
+        <div class="quote-text">
+            “สิ่งที่คุณต้องทำคือตอบคำถามสองข้อต่อไปนี้ให้เชี่ยวชาญ และจดจำคำตอบเหล่านั้นอย่างแท้จริงโดยไม่ต้องสงสัย”
+        </div>
+
+        <div class="question-section">
+            <h2 class="question-heading">
+                <span class="question-number">คำถามที่ 1</span>
+                คุณกำลังมองหาการเสริมพลังอย่างแท้จริงหรือไม่?
+            </h2>
+            
+            <p>ห่อนที่คุณจะก้าวไปข้างหน้าในโปรแกรมนี้ ลองมองตัวเองอย่างตรงไปตรงมา คุณขมขื่นกับความไม่ยุติธรรมในโลกหรือไม่ หรือคุณกำลังเรียนรู้ที่จะเล่นเกมนี้? เพราะความจริงก็คือ: โลกไม่ยุติธรรม ความยุติธรรมเป็นเพียงจินตนาการ และอำนาจมักไม่ได้มาจากการรอคอยให้ใครมอบให้ คุณได้เลือกเส้นทางที่ละเมิดกฎแล้ว ดังนั้นคำถามคือ—คุณจะเป็นผู้ควบคุมมัน หรือปล่อยให้มันควบคุมคุณ?</p>
+            
+            <p>นี่คือความจริงที่ดิบ: โปรแกรมนี้ไม่ได้มีไว้สำหรับผู้หญิงที่ฝันถึงการหนี ถ้าสิ่งเดียวที่คุณคิดคือการออกจากอาชีพนี้ ที่นี่ไม่ใช่ที่สำหรับคุณ นั่นไม่ใช่การตัดสิน—มันเป็นเพียงความเป็นจริงของสิ่งที่เรากำลังสร้าง โสเภณีแห่งอยุธยาไม่ได้เกี่ยวกับการหนีจากเกม แต่เกี่ยวกับการเป็นผู้เชี่ยวชาญในมัน</p>
+            
+            <p>ถ้าคุณใช้เวลารอคอยให้ใครสักคนมา "ช่วย" คุณ ลองถามตัวเอง: พวกเขากำลังช่วยคุณจริงๆ หรือแค่กำลังเอาเปรียบคุณในรูปแบบที่ต่างออกไป? พลังอำนาจไม่ได้เกี่ยวกับการรอให้โลกเปลี่ยนแปลง แต่เกี่ยวกับการเปลี่ยนวิธีที่คุณมองและเล่นกับโลก</p>
+            
+            <p>นี่คือสำหรับผู้หญิงที่ต้องการใช้ทุกไพ่ที่ได้รับและเล่นมันด้วยความแม่นยำและเฉียบคม นี่คือสำหรับคนที่ต้องการขายไม่ใช่แค่ร่างกาย แต่รวมถึงจิตใจ การปรากฏตัว และพลังของพวกเขา นี่คือสำหรับผู้หญิงที่เหนื่อยหน่ายกับการถูกใช้และพร้อมที่จะควบคุม</p>
+            
+            <p>ดังนั้น ลองถามตัวเองอีกครั้ง—คุณกำลังมองหาพลังอำนาจอย่างแท้จริงหรือไม่? หรือคุณยังคงหวังว่าโลกจะเล่นอย่างยุติธรรมในทันที? ถ้าคุณพร้อมที่จะเผชิญหน้ากับความจริงอันดิบเย็นของโลกที่ไม่ยุติธรรมและอ้างสิทธิ์ในที่ของคุณในนั้น ก็เดินหน้าต่อไป ถ้าไม่ ไม่เป็นไร—โปรแกรมนี้ไม่ใช่สำหรับคุณ</p>
+        </div>
+
+        <div class="question-section">
+            <h2 class="question-heading">
+                <span class="question-number">คำถามที่ 2</span>
+                คุณรู้จักปรัชญาของคุณหรือไม่?
+            </h2>
+            
+            <p>ดังนั้น คุณอยู่ที่นี่ พร้อมที่จะก้าวไปข้างหน้า—ไม่ใช่แค่การอยู่รอด แต่เป็นการเจริญรุ่งเรือง คุณได้พิสูจน์แล้วว่าคุณไม่ได้อยู่ที่นี่เพื่อหนี คุณอยู่ที่นี่เพื่อเป็นเจ้าของชีวิตนี้ เพื่อเชี่ยวชาญมัน เพื่อหล่อหลอมมันด้วยมือของคุณ จิตใจของคุณ และการปรากฏตัวของคุณ แต่ความเชี่ยวชาญไม่ได้มาโดยปราศจากรากฐาน และรากฐานนั้นคือปรัชญาของคุณ</p>
+            
+            <p>ลองคิดดู: ทุกการปฏิสัมพันธ์ที่คุณมี ทุกลูกค้าที่คุณพบ คือเรื่องราวที่รอการเปิดเผย คำถามคือ ใครกำลังเขียนเรื่องราวนั้น? เป็นพวกเขาที่กำลังลูบคลำผ่านความปรารถนาและจินตนาการของพวกเขา หรือเป็นคุณที่กำลังสร้างประสบการณ์ที่เฉพาะเจาะจง ลึกซึ้ง จนรู้สึกเหมือนโชคชะตา?</p>
+            
+            <h3>ลูกค้าที่รวยและภรรยาจากชาติก่อน</h3>
+            <p>ให้ฉันเล่าให้คุณฟังเกี่ยวกับเธอ—โสเภณีแห่งอยุธยา เธอเป็นผู้เชี่ยวชาญในปรัชญาของเธอ และวันหนึ่งเธอได้พบกับชายคนหนึ่งที่จะเปลี่ยนเกมของเธอ เขารวยเกินจินตนาการ เป็นผู้ชายที่สามารถซื้อได้ทุกอย่างแต่รู้สึกว่างเปล่าในจิตวิญญาณ เธอไม่ได้เห็นแค่ความมั่งคั่งของเขา เธอเห็นความว่างเปล่าของเขา</p>
+            
+            <p>เธอโน้มตัวเข้าไปกระซิบ "คุณเชื่อเรื่องชาติก่อนไหม?" เขาลังเลแต่พยักหน้า เธอยิ้มและบอกเขาว่า</p>
+            
+            <div class="dramatic-quote">
+                "ในชาติก่อน ฉันเคยเป็นภรรยาของคุณ เรารักกันอย่างดุเดือด แต่ถูกพรากจากกันด้วยโชคชะตา และตอนนี้ ในชาตินี้ ฉันได้พบคุณอีกครั้ง"
+            </div>
+            
+            <p>จากนั้นเป็นต้นมา เขาเป็นของเธอ ไม่ใช่เพราะความงามของเธอเท่านั้น แต่เพราะเรื่องราวที่เธอทอ</p>
+            
+            <p>นั่คือพลังของปรัชญา ไม่ใช่แค่เรื่องที่คุณเชื่อ—แต่เป็นวิธีที่คุณใช้ความเชื่อเหล่านั้นในการหล่อหลอมโลกรอบตัวคุณ</p>
+        </div>
+
+        <div class="conclusion-wrapper">
+            <div class="conclusion-text">
+                <p>So, that's all there is—internalize these two questions, and you're good to go. Consider this as an investment, let it grow within you, and always remember, some growth is implicit. The nature doesn't need to explain how much you've grown, but it shows.</p>
+                
+                <div class="conclusion-motto">
+                    Hook Better, Live Fully – Your Journey Begins Now
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h2>Need help with this program?</h2>
+            
+            <p>There are only two steps: answering the two questions and truly internalizing their answers. The first question prepares the soil, clearing away the weeds of doubt and distraction. Then we plant the seed—carefully crafted beliefs and a solid psychological framework—and let it grow and bear fruit.</p>
+            
+            <p>To truly embrace the path of the Hooker of Ayutthaya, a deep level of self-awareness is essential. If you find yourself stuck or struggling to formulate a solid mental framework, I can guide you through this process via scheduled video calls, priced at <span class="price-highlight">4500 INR per hour—the same amount what my regular hooker once charged me to fuck her ass promising me it will release all my inner demons- wise girl!</span></p>
+            
+            <p>I was once a successful entrepreneur who found myself drawn to spirituality. Over the years, I've witnessed firsthand how a solid mental framework can transform not only the financial state of hookers but their entire sense of self and empowerment. Let me bring out the best hooker in you.</p>
+
+            <div class="schedule-section">
+                <iframe 
+                    src="https://calendar.app.google/Ehkm4ocbx5arssxZ8"
+                    class="calendar-widget"
+                    frameborder="0"
+                    scrolling="no">
+                </iframe>
+                
+                <a href="https://calendar.app.google/Ehkm4ocbx5arssxZ8" class="schedule-button">
+                    Schedule Your Call
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
